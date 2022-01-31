@@ -1,0 +1,28 @@
+require:
+  - pronto-rubocop
+all:
+  exclude:
+    - 'spec/**/*'
+# exclude files for single runner
+eslint:
+  exclude:
+    - 'app/assets/**/*'
+github:
+  slug: prontolabs/pronto
+  access_token: B26354
+  api_endpoint: https://api.github.com/
+  web_endpoint: https://github.com/
+max_warnings: 150
+warnings_per_review: 30
+verbose: false
+runners: [rubocop] # only listed runners will be executed
+
+
+rubocop:
+  # Map of RuboCop severity level to Pronto severity level
+  severities:
+    refactor: info
+    warning: error
+
+  # Enable suggestions
+  suggestions: true
