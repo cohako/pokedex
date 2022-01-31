@@ -67,7 +67,7 @@ Lint/BooleanSymbol:
 
 Metrics/MethodLength:
   Enabled: true
-  Max: 10
+  Max: 15
 
 Metrics/ClassLength:
   Enabled: true
