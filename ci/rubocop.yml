@@ -1,0 +1,83 @@
+require: 
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - entrypoint.sh
+    - config/initializers/*
+    - config/environments/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+
+Layout/LineLength:
+  Max: 100
+  IgnoredPatterns: ['\A#']
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# This cops ensures a class structure is followed
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/ClassStructure
+Layout/ClassStructure:
+  Enabled: true
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - association
+    - public_attribute_macros
+    - public_delegate
+    - macros
+    - public_class_methods
+    - initializer
+    - public_methods
+    - protected_attribute_macros
+    - protected_methods
+    - private_attribute_macros
+    - private_delegate
+    - private_methods
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Lint/BooleanSymbol:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 10
+
+Metrics/ClassLength:
+  Enabled: true
+  Max: 100
+
+RSpec/ContextWording:
+  Prefixes:
+    - for
+    - if
+    - if not
+    - when
+    - with
+    - without
