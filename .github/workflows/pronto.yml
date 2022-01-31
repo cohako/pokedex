@@ -1,7 +1,5 @@
 name: Pronto
 on: [pull_request]
-env:
-  RUBOCOP_CONFIG: ci/rubocop.yml
 
 jobs:
   pronto:
